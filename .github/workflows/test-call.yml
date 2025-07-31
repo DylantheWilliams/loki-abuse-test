@@ -1,0 +1,12 @@
+name: Abuse Input Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  abuse-test:
+    uses: grafana/loki-release/.github/workflows/check.yml@main
+    with:
+      skip_validation: " true "
+      use_github_app_token: true
+      build_image: malicious/image
