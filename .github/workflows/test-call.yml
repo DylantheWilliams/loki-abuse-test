@@ -10,3 +10,16 @@ jobs:
       skip_validation: " true "
       use_github_app_token: true
       build_image: malicious/image
+    secrets: inherit
+
+  post-check:
+    runs-on: ubuntu-latest
+    needs: abuse-test
+    steps:
+      - name: Confirm Inputs Passed
+        run: |
+          echo "Logging input abuse test..."
+          echo "::notice ::SKIP_VALIDATION set to: 'true'"
+          echo "::notice ::USE_GITHUB_APP_TOKEN is enabled"
+          echo "::notice ::BUILD_IMAGE set to: 'malicious/image'"
+          echo "::notice ::Workflow completed without validation? Inspect abuse-test job logs above."
