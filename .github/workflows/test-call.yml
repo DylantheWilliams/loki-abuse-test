@@ -5,7 +5,7 @@ on:
 
 jobs:
   abuse-test:
-    uses: grafana/loki-release/.github/workflows/Check.yml@main
+    uses: grafana/loki-release/.github/workflows/check.yml@main
     with:
       skip_validation: " true "
       use_github_app_token: true
