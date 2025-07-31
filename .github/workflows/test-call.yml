@@ -5,7 +5,7 @@ on:
 
 jobs:
   abuse-test:
-    uses: grafana/loki-release/.github/workflows/check.yml@main
+    uses: grafana/loki-release/.github/workflows/Check.yml@main
     with:
       skip_validation: " true "
       use_github_app_token: true
@@ -22,4 +22,3 @@ jobs:
           echo "::notice ::SKIP_VALIDATION set to: 'true'"
           echo "::notice ::USE_GITHUB_APP_TOKEN is enabled"
           echo "::notice ::BUILD_IMAGE set to: 'malicious/image'"
-          echo "::notice ::Workflow completed without validation? Inspect abuse-test job logs above."
